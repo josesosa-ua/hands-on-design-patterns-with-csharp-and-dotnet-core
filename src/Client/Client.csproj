@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Decorator\Decorator.csproj" />
+    <ProjectReference Include="..\ChainOfResponsibility\ChainOfResponsibility.csproj" />
   </ItemGroup>
 
 </Project>
