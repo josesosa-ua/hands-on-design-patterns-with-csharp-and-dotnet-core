@@ -1,0 +1,11 @@
+namespace Decorator;
+
+public class SimpleMessage : Message
+{
+    public SimpleMessage(string text) : base(text) { }
+
+    public override void PrintMessage()
+    {
+        Console.WriteLine($"Simple Message: {_text}");
+    }
+}
