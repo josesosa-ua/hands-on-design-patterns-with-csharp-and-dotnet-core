@@ -8,8 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Decorator\Decorator.csproj" />
-    <ProjectReference Include="..\ChainOfResponsibility\ChainOfResponsibility.csproj" />
+    <ProjectReference Include="..\Pattern\Pattern.csproj" />
   </ItemGroup>
 
 </Project>

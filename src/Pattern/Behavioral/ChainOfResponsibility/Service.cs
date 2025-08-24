@@ -1,4 +1,4 @@
-namespace ChainOfResponsibility;
+namespace Pattern.ChainOfResponsibility;
 
 [Flags]
 public enum Services

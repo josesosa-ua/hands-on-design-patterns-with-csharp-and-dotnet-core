@@ -1,4 +1,4 @@
-namespace Decorator;
+namespace Pattern.Decorator;
 
 public class SimpleMessage : Message
 {

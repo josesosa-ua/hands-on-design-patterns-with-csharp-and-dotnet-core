@@ -1,4 +1,4 @@
-namespace ChainOfResponsibility;
+namespace Pattern.ChainOfResponsibility;
 
 public class Detailer : ServiceHandler
 {

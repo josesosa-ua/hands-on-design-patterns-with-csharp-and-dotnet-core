@@ -1,4 +1,4 @@
-namespace Decorator;
+namespace Pattern.Decorator;
 
 /**
  * The abstract class is used to hold the message text for all message types.
@@ -14,3 +14,4 @@ public abstract class Message : IMessage
 
     public abstract void PrintMessage();
 }
+

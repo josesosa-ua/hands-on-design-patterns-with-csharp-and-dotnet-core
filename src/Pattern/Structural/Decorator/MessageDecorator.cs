@@ -1,4 +1,4 @@
-namespace Decorator;
+namespace Pattern.Decorator;
 
 public abstract class MessageDecorator : IMessage
 {
