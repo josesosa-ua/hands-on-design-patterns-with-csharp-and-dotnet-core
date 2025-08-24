@@ -1,4 +1,5 @@
-﻿using Pattern.ChainOfResponsibility;
+﻿using Pattern.Behavioral.State;
+using Pattern.ChainOfResponsibility;
 using Pattern.Decorator;
 using Pattern.Structural.Component;
 using Pattern.Structural.Flyweight;
@@ -105,5 +106,16 @@ static void addCarToPoliceDatabase(FlyweightFactory factory, Vehicle car)
     // passes it to the flyweight's methods.
     flyweight.Operation(car);
 }
+
+#endregion
+
+//-----------------------------------------------------------------
+
+#region State
+
+var stateA = new ConcreteStateA();
+var context = new Context(stateA);
+context.DoThis();
+context.DoThat();
 
 #endregion
