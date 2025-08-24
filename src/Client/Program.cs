@@ -1,6 +1,7 @@
 ﻿using Pattern.ChainOfResponsibility;
 using Pattern.Decorator;
 using Pattern.Structural.Component;
+using Pattern.Structural.Flyweight;
 
 #region Decorator Pattern
 
@@ -51,5 +52,58 @@ tree.Add(branch1_1);
 tree.Add(branch1_2);
 
 Console.WriteLine(tree.Operation());
+
+#endregion
+
+//-----------------------------------------------------------------
+
+#region Flyweight
+
+// The client code usually creates a bunch of pre-populated
+// flyweights in the initialization stage of the application.
+var factory = new FlyweightFactory(
+    new Vehicle { Company = "Chevrolet", Model = "Camaro2018", Color = "pink" },
+    new Vehicle { Company = "Mercedes Benz", Model = "C300", Color = "black" },
+    new Vehicle { Company = "Mercedes Benz", Model = "C500", Color = "red" },
+    new Vehicle { Company = "BMW", Model = "M5", Color = "red" },
+    new Vehicle { Company = "BMW", Model = "X6", Color = "white" }
+);
+factory.ListFlyweights();
+
+addCarToPoliceDatabase(factory, new Vehicle
+{
+    Number = "CL234IR",
+    Owner = "James Doe",
+    Company = "BMW",
+    Model = "M5",
+    Color = "red"
+});
+
+addCarToPoliceDatabase(factory, new Vehicle
+{
+    Number = "CL234IR",
+    Owner = "James Doe",
+    Company = "BMW",
+    Model = "X1",
+    Color = "red"
+});
+
+factory.ListFlyweights();
+
+static void addCarToPoliceDatabase(FlyweightFactory factory, Vehicle car)
+{
+    Console.WriteLine("\nClient: Adding a car to database.");
+
+    var flyweight = factory.GetFlyweight(new Vehicle
+    {
+        Color = car.Color,
+        Model = car.Model,
+        Company = car.Company
+    });
+
+    // The client code either stores or calculates extrinsic state and
+    // passes it to the flyweight's methods.
+    flyweight.Operation(car);
+}
 
 #endregion
